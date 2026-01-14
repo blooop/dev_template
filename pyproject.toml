@@ -1,5 +1,5 @@
 [project]
-name = "python_template"
+name = "dev_template"
 version = "0.2.0"
 authors = [{ name = "Austin Gregg-Smith", email = "blooop@gmail.com" }]
 description = "A python package template"
@@ -9,8 +9,8 @@ license = "MIT"
 dependencies = []
 
 [project.urls]
-Source = "https://github.com/blooop/python_template"
-Home = "https://github.com/blooop/python_template"
+Source = "https://github.com/blooop/dev_template"
+Home = "https://github.com/blooop/dev_template"
 
 [tool.pixi.workspace]
 channels = ["conda-forge", "https://prefix.dev/blooop"]
@@ -31,7 +31,7 @@ python = "3.12.*"
 python = "3.13.*"
 
 [tool.pixi.pypi-dependencies]
-python_template = { path = ".", editable = true }
+dev_template = { path = ".", editable = true }
 
 [project.optional-dependencies]
 test = [
@@ -50,7 +50,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build]
-include = ["python_template"]
+include = ["dev_template"]
 
 # Environments
 [tool.pixi.environments]
