@@ -1,5 +1,5 @@
 # Changelog
 
-## python_template
+## dev_template
 
 ## [0.2.0]
