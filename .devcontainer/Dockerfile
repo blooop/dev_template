@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 
-ARG PIXI_VERSION=v0.62.2
+ARG PIXI_VERSION=v0.75.0
 
 RUN curl -L -o /usr/local/bin/pixi -fsSL --compressed "https://github.com/prefix-dev/pixi/releases/download/${PIXI_VERSION}/pixi-$(uname -m)-unknown-linux-musl" \
     && chmod +x /usr/local/bin/pixi \
@@ -15,5 +15,5 @@ RUN echo 'eval "$(pixi completion -s bash)"' >> /home/vscode/.bashrc \
     && echo '# Workaround: pixi trampoline fails for bash scripts, so add env bin directly' >> /home/vscode/.profile \
     && echo '[ -d "$HOME/.pixi/envs/claude-shim/bin" ] && export PATH="$HOME/.pixi/envs/claude-shim/bin:$PATH"' >> /home/vscode/.profile
 
-# Create .ssh directory with proper permissions for SSH config mounts
-RUN mkdir -p /home/vscode/.ssh && chmod 700 /home/vscode/.ssh
+# Create .config/gh so the host's GitHub CLI config mounts cleanly onto it
+RUN mkdir -p /home/vscode/.config/gh
